@@ -62,3 +62,7 @@ def index(request):
     }) 
 `in Template`
 <h2>{{ meetups.0.title }}</h2> <!-- Interpolation Syntax -->
+
+`NOTE` inside Interpolation Syntax {{}}
+when we have to reference something in variable we always use . (dot)
+like meetups.0.title instead of meetups[0]['title']
