@@ -32,3 +32,19 @@ and it's given 'APP_DIRS': True which tell your project to see templates inside 
 `NOTE` we have to do this because it prevent from app crashing of multiple apps and they have templates with similar name
 >> then we create templates html file inside
 >> app-name/templates/app-name/index.html
+
+# STATIC FILE
+when we want to add CSS or Javascript or images to HTML file
+these are called "static" contents
+>> creating static folder like creating templates folder
+>> app-name/static/app-name
+inside this folder you can add folders
+    - images
+    - scripts
+    - styles
+>> to import css to html file
+>> first 
+{% load static %} `on the first line of html file`
+<link rel="stylesheet" href="{% static 'meetups/styles/base.css' %}"> after <title> tag
+>> like templates we will reference the path which start from inside 'static' folder
+
