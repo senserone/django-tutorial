@@ -48,3 +48,17 @@ inside this folder you can add folders
 <link rel="stylesheet" href="{% static 'meetups/styles/base.css' %}"> after <title> tag
 >> like templates we will reference the path which start from inside 'static' folder
 
+# Transfer data from View To Template
+`in View `
+def index(request):
+    
+    meetups = [
+        { 'title': 'A First Meetup'},
+        { 'title': 'A Second Meetup'}
+    ]
+    
+    return render(request, 'meetups/index.html', {
+        'meetups': meetups,
+    }) 
+`in Template`
+<h2>{{ meetups.0.title }}</h2> <!-- Interpolation Syntax -->
