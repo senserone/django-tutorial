@@ -22,3 +22,12 @@ def index(request):
     }) 
 ## we have to give path start from inside templates
 ## NOT!! 'templates/meetups/index.html'
+
+def meetup_details(request, meetup_slug): #same name as slug:<____> in urls.py
+    print(meetup_slug)
+    selected_meetup = {'title': 'A First Meetup',
+                       'description': 'This is a First Meetup'}
+    return render(request, 'meetups/meetup-details.html', {
+        'meetup_title': selected_meetup['title'],
+        'meetup_description': selected_meetup['description'],
+    })
